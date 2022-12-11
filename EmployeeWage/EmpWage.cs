@@ -12,18 +12,25 @@ namespace EmployeeWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             int empPresent = 1;
+            int empPartTime = 2;
             int perHour = 20;
             int fullTime = 8;
+            int harfTime = 4;
             Random random = new Random();
-            int check = random.Next(0, 2);
+            int check = random.Next(0, 3);
             if (check == empPresent)
             {
                 Console.WriteLine("EMPLOYEE IS PRESENT");
-                int perDay = perHour * fullTime;
-                Console.WriteLine("Daily wadge : " + perDay);
-
+                int PerDay = perHour * fullTime;
+                Console.WriteLine("Daily wadge : " + PerDay);
             }
-            else 
+            else if (check == empPartTime)
+            {
+                Console.WriteLine("EMPLOYEE IS PART TIME");
+                int HalfDay = perHour * harfTime;
+                Console.WriteLine("Daily wadge : " + HalfDay);
+            }
+            else
             {
                 Console.WriteLine("EMPLOYEE IS ABSENT");
             }
