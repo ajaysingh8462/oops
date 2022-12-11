@@ -16,28 +16,36 @@ namespace EmployeeWage
             int empPresent = 1;
             int empPartTime = 2;
             int perHour = 20;
-            int fullTime = 8;
-            int harfTime = 4;
-            Random random = new Random();
-            int check = random.Next(0, 3);
-            
-            switch(check)
+            int maxDaysInMonth = 20;
+            int empHrs = 0, empwage = 0, totalErning = 0;
+            for (int days = 1; days<=maxDaysInMonth; days++)
             {
-                case 1:
+                Random random = new Random();
+                int check = random.Next(0, 3);
+                      
+                switch (check)
+                {
+                    case 1:
+                        empHrs = 8;
 
-                Console.WriteLine("EMPLOYEE IS PRESENT");
-                int PerDay = perHour * fullTime;
-                Console.WriteLine("Daily wadge : " + PerDay);
-                    break;
-                case 2:
-                Console.WriteLine("EMPLOYEE IS PART TIME");
-                int HalfDay = perHour * harfTime;
-                Console.WriteLine("Daily wadge : " + HalfDay);
-                    break;
-                default:
-                Console.WriteLine("EMPLOYEE IS ABSENT");
-                    break;
+                        Console.WriteLine("EMPLOYEE IS PRESENT");
+  
+                        break;
+                    case 2:
+                        empHrs = 4;
+                        Console.WriteLine("EMPLOYEE IS PART TIME");
+                       
+                        break;
+                    default:
+                        empHrs = 0;
+                        Console.WriteLine("EMPLOYEE IS ABSENT");
+                        break;
+                }
+                empwage = empHrs * perHour;
+                totalErning += empwage;
+                Console.WriteLine("employee wage:" + empwage);
             }
+            Console.WriteLine("total employee wage:" + totalErning);
 
 
         }
