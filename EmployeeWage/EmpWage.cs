@@ -12,11 +12,15 @@ namespace EmployeeWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             int empPresent = 1;
+            int perHour = 20;
+            int fullTime = 8;
             Random random = new Random();
             int check = random.Next(0, 2);
             if (check == empPresent)
             {
                 Console.WriteLine("EMPLOYEE IS PRESENT");
+                int perDay = perHour * fullTime;
+                Console.WriteLine("Daily wadge : " + perDay);
 
             }
             else 
