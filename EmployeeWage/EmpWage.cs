@@ -10,7 +10,9 @@ namespace EmployeeWage
     {
         public void Emp()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Welcome to Employee Wage Computation Program");
+            Console.ForegroundColor = ConsoleColor.Gray;
             int empPresent = 1;
             int empPartTime = 2;
             int perHour = 20;
@@ -18,22 +20,26 @@ namespace EmployeeWage
             int harfTime = 4;
             Random random = new Random();
             int check = random.Next(0, 3);
-            if (check == empPresent)
+            
+            switch(check)
             {
+                case 1:
+
                 Console.WriteLine("EMPLOYEE IS PRESENT");
                 int PerDay = perHour * fullTime;
                 Console.WriteLine("Daily wadge : " + PerDay);
-            }
-            else if (check == empPartTime)
-            {
+                    break;
+                case 2:
                 Console.WriteLine("EMPLOYEE IS PART TIME");
                 int HalfDay = perHour * harfTime;
                 Console.WriteLine("Daily wadge : " + HalfDay);
-            }
-            else
-            {
+                    break;
+                default:
                 Console.WriteLine("EMPLOYEE IS ABSENT");
+                    break;
             }
+
+
         }
     }
 }
