@@ -17,9 +17,11 @@ namespace EmployeeWage
             int empPartTime = 2;
             int perHour = 20;
             int maxDaysInMonth = 20;
-            int empHrs = 0, empwage = 0, totalErning = 0;
-            for (int days = 1; days<=maxDaysInMonth; days++)
+            int maxWoorkinHour= 100;
+            int empHrs = 0, empwage = 0, totalErning = 0, totalWorkingDays=0 , totalEmphr=0; 
+            while (totalEmphr<=maxWoorkinHour&&totalWorkingDays < maxDaysInMonth)
             {
+                totalWorkingDays++;
                 Random random = new Random();
                 int check = random.Next(0, 3);
                       
@@ -34,7 +36,7 @@ namespace EmployeeWage
                     case 2:
                         empHrs = 4;
                         Console.WriteLine("EMPLOYEE IS PART TIME");
-                       
+                         
                         break;
                     default:
                         empHrs = 0;
@@ -42,9 +44,11 @@ namespace EmployeeWage
                         break;
                 }
                 empwage = empHrs * perHour;
+                maxWoorkinHour += totalEmphr;
                 totalErning += empwage;
                 Console.WriteLine("employee wage:" + empwage);
             }
+            Console.WriteLine("total working hour:" + maxWoorkinHour);
             Console.WriteLine("total employee wage:" + totalErning);
 
 
