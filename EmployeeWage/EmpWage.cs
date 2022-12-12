@@ -10,7 +10,7 @@ namespace EmployeeWage
     {
         public void Emp()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Welcome to Employee Wage Computation Program");
             Console.ForegroundColor = ConsoleColor.Gray;
             int empPresent = 1;
@@ -30,22 +30,26 @@ namespace EmployeeWage
                     case 1:
                         empHrs = 8;
 
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("EMPLOYEE IS PRESENT");
   
                         break;
                     case 2:
                         empHrs = 4;
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("EMPLOYEE IS PART TIME");
                          
                         break;
                     default:
                         empHrs = 0;
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("EMPLOYEE IS ABSENT");
                         break;
                 }
                 empwage = empHrs * perHour;
                 maxWoorkinHour += totalEmphr;
                 totalErning += empwage;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("employee wage:" + empwage);
             }
             Console.WriteLine("total working hour:" + maxWoorkinHour);
