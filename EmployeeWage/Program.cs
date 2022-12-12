@@ -8,10 +8,12 @@ namespace EmployeeWage
 {
     class program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            EmpWage wage= new EmpWage();
-            wage.Emp();
+            EmpWage salery = new EmpWage();
+
+            salery.CalculateSalery("TATA", 20, 20, 100);
+            salery.CalculateSalery("INFOSYS", 30, 18, 90);
         }
     }
 
