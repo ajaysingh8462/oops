@@ -17,25 +17,25 @@ namespace EmployeeWage
     public class EmpWageBuilderArray : IEmployeeWage
     {
         private int numOfCompany = 0;
-        private CompanyEmpWage[] companyEmpWageArray;
+        private LinkedList<CompanyEmpWage> companyEmpWageList;
 
         public EmpWageBuilderArray()
         {
-            this.companyEmpWageArray = new CompanyEmpWage[5];
+            this.companyEmpWageList = new LinkedList<CompanyEmpWage>();
         }
 
         public void AddCompanyEmpWage(string company, int perHour, int maxDaysInMonth, int maxWorkinHour)
         {
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, perHour, maxDaysInMonth, maxWorkinHour);
-            numOfCompany++;
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, perHour, maxDaysInMonth, maxWorkinHour);
+            this.companyEmpWageList.AddLast(companyEmpWage);
         }
 
         public void ComputeEmpWage()
         {
-            for (int i = 0; i < numOfCompany; i++)
+            foreach (CompanyEmpWage companyEmpWage in this.companyEmpWageList)
             {
-                companyEmpWageArray[i].SetTotalEmpWage(this.ComputeEmpWage(this.companyEmpWageArray[i]));
-                Console.WriteLine(this.companyEmpWageArray[i].Result());
+                companyEmpWage.SetTotalEmpWage(this.ComputeEmpWage(companyEmpWage));
+                Console.WriteLine(companyEmpWage.Result());
             }
         }
 

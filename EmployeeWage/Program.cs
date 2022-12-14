@@ -11,15 +11,13 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            
-                Console.WriteLine("Welcome to Employee wage Calculation ");
-                EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-                empWageBuilder.AddCompanyEmpWage("TATA", 20, 20, 100);
-                empWageBuilder.AddCompanyEmpWage("INFOSYS", 30, 18, 90);
-                empWageBuilder.ComputeEmpWage();
 
-               
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.AddCompanyEmpWage("TATA", 20, 20, 100);
+            empWageBuilder.AddCompanyEmpWage("INFOSYS", 30, 18, 90);
+            empWageBuilder.ComputeEmpWage();
         }
     }
-
 }
+
+              
