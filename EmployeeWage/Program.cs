@@ -16,6 +16,7 @@ namespace EmployeeWage
             empWageBuilder.AddCompanyEmpWage("TATA", 20, 20, 100);
             empWageBuilder.AddCompanyEmpWage("INFOSYS", 30, 18, 90);
             empWageBuilder.ComputeEmpWage();
+            Console.WriteLine($"Total wage for TATA Company : {empWageBuilder.getTotalWage("TATA")}");
         }
     }
 }
